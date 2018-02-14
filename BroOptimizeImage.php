@@ -23,12 +23,13 @@ new Autoloader( __FILE__, 'BroOptimizeImage' );
 use BroOptimizeImage\Base\Wrap;
 use BroOptimizeImage\Classes\AddAttachment;
 use BroOptimizeImage\Classes\Cron;
+use BroOptimizeImage\Classes\JpegQuality;
 use BroOptimizeImage\Classes\Meta;
 use BroOptimizeImage\Classes\OptionPage;
 use BroOptimizeImage\Classes\TurnTable;
 
 class BroOptimizeImage extends Wrap {
-	public $version = '1.0.0';
+	public $version = '1.0.1';
 	public static $textdomine;
 	public static $batch = 11;
 
@@ -36,6 +37,8 @@ class BroOptimizeImage extends Wrap {
 		self::$batch = apply_filters( 'BroOptimizeImage__stack', 11 );
 
 		self::$textdomine = $this->setTextdomain();
+
+		JpegQuality::quality();
 
 		new Meta();
 
