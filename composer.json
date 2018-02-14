@@ -1,0 +1,15 @@
+{
+    "name": "vladimir/bro-optimize-image",
+    "description": "Wordpress plugin",
+    "require": {
+        "tinify/tinify": "^1.5",
+        "tareq1988/wordpress-settings-api-class": "dev-master"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "petrozvodsky",
+            "email": "petrozavodsky@gmail.com"
+        }
+    ]
+}
