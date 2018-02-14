@@ -1,6 +1,6 @@
 {
     "name": "vladimir/bro-optimize-image",
-    "description": "Wordpress plugin",
+    "description": "Broptimize image",
     "require": {
         "tinify/tinify": "^1.5",
         "tareq1988/wordpress-settings-api-class": "dev-master"
