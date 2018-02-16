@@ -35,12 +35,18 @@ class AddAttachment {
 
 			preg_match( '#\d+\/\d+\/#', $data['file'], $matches );
 			$attachment_path = array_shift( $matches );
-			$sizes           = [ $data['file'] => $attachment_id ];
+
+			$sizes = [];
+
+			if ( $this->extension_helper( $data['file'] ) ) {
+				$sizes = [ $data['file'] => $attachment_id ];
+			}
 
 			foreach ( $data['sizes'] as $file ) {
-
 				if ( "image/jpeg" == $file['mime-type'] || "image/png" == $file['mime-type'] ) {
-					$sizes[ $attachment_path . $file['file'] ] = $attachment_id;
+					if ( $this->extension_helper( $file['file'] ) ) {
+						$sizes[ $attachment_path . $file['file'] ] = $attachment_id;
+					}
 				}
 			}
 
@@ -76,6 +82,17 @@ class AddAttachment {
 		$sizes = array_diff_assoc( $sizes, $out );
 
 		return $sizes;
+
+	}
+
+	private function extension_helper( $str ) {
+		preg_match( '/(.gif)$/', $str, $matches );
+
+		if ( empty( $matches ) ) {
+			return true;
+		}
+
+		return false;
 
 	}
 
