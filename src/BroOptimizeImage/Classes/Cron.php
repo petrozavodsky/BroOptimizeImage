@@ -15,8 +15,8 @@ class Cron {
 	public static function interval() {
 		add_filter( 'cron_schedules', function ( $schedules ) {
 			$schedules['BroOptimizeImage__schedule_commonly'] = [
-				'interval' => MINUTE_IN_SECONDS * 1.4,
-				'display'  => '~ 1,5 min.'
+				'interval' => MINUTE_IN_SECONDS * 3.3,
+				'display'  => '~ 3.1 min.'
 			];
 
 			return $schedules;

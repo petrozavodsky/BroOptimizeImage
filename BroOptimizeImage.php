@@ -34,15 +34,18 @@ class BroOptimizeImage extends Wrap {
 	public static $batch = 11;
 
 	function __construct() {
-		self::$batch = apply_filters( 'BroOptimizeImage__stack', 11 );
+		self::$batch = apply_filters( 'BroOptimizeImage__stack', 5 );
 
 		self::$textdomine = $this->setTextdomain();
 
 		JpegQuality::quality();
 
+
 		new Meta();
 
-		new AddAttachment();
+		if ( ! defined( 'WP_CLI' ) ) {
+			new AddAttachment();
+		}
 
 		new OptionPage();
 
