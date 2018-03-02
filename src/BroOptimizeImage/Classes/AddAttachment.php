@@ -33,8 +33,8 @@ class AddAttachment {
 	public function files( $attachment_id, $data ) {
 		if ( wp_attachment_is_image( $attachment_id ) ) {
 
-			preg_match( '#\d+\/\d+\/#', $data['file'], $matches );
-			$attachment_path = array_shift( $matches );
+			$name = basename($data['file']);
+			$attachment_path = str_replace($name,'', $data['file']);
 
 			$sizes = [];
 
