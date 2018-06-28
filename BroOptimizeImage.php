@@ -76,7 +76,7 @@ class BroOptimizeImage extends Wrap {
 		}
 
 		$table_name = $wpdb->get_blog_prefix() . TurnTable::$table_name;
-		if ( 1 != $wpdb->query( "show tables like {$table_name}" ) ) {
+		if ( 1 != $wpdb->query( "show tables like '{$table_name}'" ) ) {
 			$charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} COLLATE {$wpdb->collate}";
 			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 			$sql = "
