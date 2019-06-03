@@ -60,7 +60,10 @@ class Optimize {
 				} catch (\Exception $e) {
 
 					$this->rebuild_keys( ApiKeyClass::$remain_default - $compressionsThisMonth );
-					wp_die($e->getMessage());
+
+					if ( WP_DEBUG ) {
+                        wp_die($e->getMessage());
+                    }
 				}
 
 			}
