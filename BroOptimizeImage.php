@@ -14,11 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once( "vendor/autoload.php" );
 require_once( "includes/Autoloader.php" );
 
-
 use BroOptimizeImage\Autoloader;
 
 new Autoloader( __FILE__, 'BroOptimizeImage' );
-
 
 use BroOptimizeImage\Base\Wrap;
 use BroOptimizeImage\Classes\AddAttachment;
