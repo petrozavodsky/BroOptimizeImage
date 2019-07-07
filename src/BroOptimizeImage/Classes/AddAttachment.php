@@ -2,7 +2,6 @@
 
 namespace BroOptimizeImage\Classes;
 
-
 class AddAttachment {
 
 	public function __construct() {
